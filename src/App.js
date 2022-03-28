@@ -1,6 +1,6 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { deposit } from "./store/balance/actions";
+import { deposit, withdraw, reset } from "./store/balance/actions";
 import { selectBalance } from "./store/balance/selectors";
 
 function App() {
@@ -16,6 +16,20 @@ function App() {
         }}
       >
         Deposit 10$
+      </button>
+      <button
+        onClick={() => {
+          dispatch(withdraw(10));
+        }}
+      >
+        Withdraw 10$
+      </button>
+      <button
+        onClick={() => {
+          dispatch(reset());
+        }}
+      >
+        Reset
       </button>
     </div>
   );
